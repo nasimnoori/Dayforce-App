@@ -72,6 +72,6 @@ return json_encode($resp, JSON_PRETTY_PRINT);
 }
 
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
-$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees?UpdateStartDate=2019-01-01&UpdateEndDate=2019-01-31');
+$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/992053');
 
 var_dump($result);

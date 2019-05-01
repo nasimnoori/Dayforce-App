@@ -23,4 +23,7 @@ pg_free_result($result);
 // Closing connection
 pg_close($conn);
 
+// new line
+echo "<hr>";
+
 ?>

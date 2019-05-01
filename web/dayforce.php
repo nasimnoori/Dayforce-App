@@ -73,5 +73,5 @@ return json_encode($resp, JSON_PRETTY_PRINT);
 
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
-echo json_encode($result)
+echo json_encode($result);
 //echo $result['body']['Data'];

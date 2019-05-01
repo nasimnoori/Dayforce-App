@@ -79,6 +79,7 @@ $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
 //var_dump($result->body);
 //echo $result['body']['Data'];
 $data = $result->body->Data;
-foreach($data as $key => $value){
-    echo "{$key} => {$value} ";
-}
+var_dump($data);
+//foreach($data as $key => $value){
+//    echo "{$key} => {$value} ";
+//}

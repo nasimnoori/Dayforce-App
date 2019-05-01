@@ -43,7 +43,7 @@ function connect($url, $query = null) {
 
 
     $headers = array('Accept' => 'application/json');
-    $query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE");
+    $query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE", 'IncludeSubordinateObjects' => true);
     //$query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
 
     Unirest\Request::curlOpts([

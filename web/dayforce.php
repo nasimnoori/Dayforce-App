@@ -42,36 +42,36 @@ require_once '../vendor/autoload.php';
 function connect($url, $query = null) {
 
 
-$headers = array('Accept' => 'application/json');
-// $query = array('IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465);
+    $headers = array('Accept' => 'application/json');
+    // $query = array('IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465);
 
-Unirest\Request::curlOpts([
-    CURLOPT_FOLLOWLOCATION => true,
-    // CURLOPT_AUTOREFERER => true,
-    // CURLOPT_COOKIESESSION => true,
-    CURLOPT_UNRESTRICTED_AUTH => true,
-]);
-Unirest\Request::auth('SDI_Web_Services', 'Sdi123');
+    Unirest\Request::curlOpts([
+        CURLOPT_FOLLOWLOCATION => true,
+        // CURLOPT_AUTOREFERER => true,
+        // CURLOPT_COOKIESESSION => true,
+        CURLOPT_UNRESTRICTED_AUTH => true,
+    ]);
+    Unirest\Request::auth('SDI_Web_Services', 'Sdi123');
 
-$response = Unirest\Request::get($url, $headers, $query);
-
-
-$resp['code'] = $response->code;
-$resp['headers'] = $response->headers;
-$resp['body'] = $response->body;
-
-return json_encode($resp, JSON_PRETTY_PRINT);
+    $response = Unirest\Request::get($url, $headers, $query);
 
 
-// $response->code;        // HTTP Status code
-// $response->headers;     // Headers
-// $response->body;        // Parsed body
-// $response->raw_body;    // Unparsed body
+    $resp['code'] = $response->code;
+    $resp['headers'] = $response->headers;
+    $resp['body'] = $response->body;
 
-// return json_encode($response, JSON_PRETTY_PRINT);
+    return json_encode($resp, JSON_PRETTY_PRINT);
+
+
+    // $response->code;        // HTTP Status code
+    // $response->headers;     // Headers
+    // $response->body;        // Parsed body
+    // $response->raw_body;    // Unparsed body
+
+    // return json_encode($response, JSON_PRETTY_PRINT);
 }
 
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
-$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
-echo json_encode($result);
+$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465');
+echo var_dump($result);
 //echo $result['body']['Data'];

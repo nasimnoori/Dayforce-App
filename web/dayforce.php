@@ -58,7 +58,7 @@ $response = Unirest\Request::get($url, $headers, $query);
 
 $resp['code'] = $response->code;
 $resp['headers'] = $response->headers;
-$resp['body'] = $response->body;
+$resp['body'] = $response->raw_body;
 
 return json_encode($resp, JSON_PRETTY_PRINT);
 
@@ -74,4 +74,4 @@ return json_encode($resp, JSON_PRETTY_PRINT);
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
 
-var_dump($result->body);
+var_dump($result);

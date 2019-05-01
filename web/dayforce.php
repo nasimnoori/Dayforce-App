@@ -79,6 +79,6 @@ $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
 //var_dump($result->body);
 //echo $result['body']['Data'];
 $data = $result->body;
-foreach($data as &$value){
-    echo $value['XRefCode'] +"<br>";
+foreach($data as $key => $value){
+    echo "{$key} => {$value} ";
 }

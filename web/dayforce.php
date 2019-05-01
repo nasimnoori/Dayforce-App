@@ -44,6 +44,7 @@ function connect($url, $query = null) {
 
     $headers = array('Accept' => 'application/json');
     // $query = array('IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465);
+    $query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
 
     Unirest\Request::curlOpts([
         CURLOPT_FOLLOWLOCATION => true,
@@ -73,6 +74,6 @@ function connect($url, $query = null) {
 
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
-echo var_dump($result['code']);
-echo var_dump($result['body']);
+echo var_dump($result);
+echo var_dump($result);
 //echo $result['body']['Data'];

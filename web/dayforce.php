@@ -53,7 +53,7 @@ function connect($url, $query = null) {
         CURLOPT_UNRESTRICTED_AUTH => true,
     ]);
     Unirest\Request::auth('SDI_Web_Services', 'Sdi123');
-
+/*
     $response = Unirest\Request::get($url, $headers, $query);
 
 
@@ -62,7 +62,8 @@ function connect($url, $query = null) {
     $resp['body'] = $response->body;
 
     return json_encode($resp, JSON_PRETTY_PRINT);
-
+*/
+    return Unirest\Request::get($url, $headers, $query);
 
     // $response->code;        // HTTP Status code
     // $response->headers;     // Headers

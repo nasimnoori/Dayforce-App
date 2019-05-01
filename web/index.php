@@ -3,7 +3,7 @@ $conn = pg_connect(getenv("DATABASE_URL"));
 
 var_dump($conn);
 
-$query = 'SELECT * FROM Account';
+$query = 'SELECT * FROM account';
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 // Printing results in HTML

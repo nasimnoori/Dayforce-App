@@ -76,5 +76,9 @@ function connect($url, $query = null) {
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
 
-var_dump($result->body);
+//var_dump($result->body);
 //echo $result['body']['Data'];
+$data = $result->body;
+foreach($data as &$value){
+    echo $value['XRefCode'] +"<br>";
+}

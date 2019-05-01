@@ -43,8 +43,8 @@ function connect($url, $query = null) {
 
 
     $headers = array('Accept' => 'application/json');
-    // $query = array('IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465);
-    $query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
+    $query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE");
+    //$query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
 
     Unirest\Request::curlOpts([
         CURLOPT_FOLLOWLOCATION => true,

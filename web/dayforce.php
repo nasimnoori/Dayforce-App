@@ -51,7 +51,7 @@ function connect($url, $query = null) {
         // CURLOPT_AUTOREFERER => true,
         // CURLOPT_COOKIESESSION => true,
         CURLOPT_UNRESTRICTED_AUTH => true,
-    ]);ss
+    ]);
     Unirest\Request::auth('SDI_Web_Services', 'Sdi123');
 /*
     $response = Unirest\Request::get($url, $headers, $query);
@@ -74,7 +74,7 @@ function connect($url, $query = null) {
 }
 
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
-$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees');
+$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465');
 
 //var_dump($result->body);
 //echo $result['body']['Data'];

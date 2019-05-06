@@ -67,7 +67,7 @@ function connect($url, $query, $header) {
 }
 $headers = array('Accept' => 'application/json');
 $query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE", 'IncludeSubordinateObjects' => true);
-$url = 'https://www.dayforcehcm.com/api/sdi/v1/Reports';
+$url = 'https://www.dayforcehcm.com/api/sdi/v1/ReportDefinitions';
 //$query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect($url, $query, $headers);

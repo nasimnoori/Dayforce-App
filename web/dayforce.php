@@ -39,12 +39,7 @@
 
 require_once '../vendor/autoload.php';
 
-function connect($url, $query = null) {
-
-
-    $headers = array('Accept' => 'application/json');
-    $query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE", 'IncludeSubordinateObjects' => true);
-    //$query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
+function connect($url, $query, $header) {
 
     Unirest\Request::curlOpts([
         CURLOPT_FOLLOWLOCATION => true,
@@ -55,8 +50,6 @@ function connect($url, $query = null) {
     Unirest\Request::auth('SDI_Web_Services', 'Sdi123');
 /*
     $response = Unirest\Request::get($url, $headers, $query);
-
-
     $resp['code'] = $response->code;
     $resp['headers'] = $response->headers;
     $resp['body'] = $response->body;
@@ -72,9 +65,12 @@ function connect($url, $query = null) {
 
     // return json_encode($response, JSON_PRETTY_PRINT);
 }
-
+$headers = array('Accept' => 'application/json');
+$query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE", 'IncludeSubordinateObjects' => true);
+$url = 'https://www.dayforcehcm.com/api/sdi/v1/Employees';
+//$query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
-$result = connect('https://www.dayforcehcm.com/api/sdi/v1/Reports/EMPRAWPUNCHNEW');
+$result = connect($url, $query, $headers);
 
 //var_dump($result->body);
 //echo $result['body']['Data'];

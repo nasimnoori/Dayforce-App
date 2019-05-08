@@ -72,10 +72,10 @@ $url = 'https://www.dayforcehcm.com/api/sdi/v1/EmployeesPunchesEmployeesPunches?
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect($url, $query, $headers);
 
-//var_dump($result->body);
+var_dump($result);
 //echo $result['body']['Data'];
-$data = $result->body->Data;
-var_dump($data);
+//$data = $result->body->Data;
+//var_dump($data);
 //foreach($data as $key => $value){
 //    echo "{$key} => {$value} ";
 //}

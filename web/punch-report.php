@@ -62,16 +62,16 @@ $res = json_decode($result, true);
               <?php
               $rows = $res['body']['Data']['Rows'];
                 foreach ($rows as $row) {
-                    echo '<tr>';
-                    echo '<td scope="row">'+$row['Employee_XRefCode']+'</td>';
-                    echo '<td>'+$row['Employee_FirstName']+'</td>';
-                    echo '<td>'+$row['Employee_LastName']+'</td>';
-                    echo '<td>'+$row['PunchType_ShortName']+'</td>';
-                    echo '<td>'+$row['EmployeeRawPunch_RawPunchTime']+'</td>';
-                    echo '<td>'+$row['EmployeeRawPunchGeoLocation_Longitude']+'</td>';
-                    echo '<td>'+$row['EmployeeRawPunchGeoLocation_Latitude']+'</td>';
-                    echo '<td>'+$row['EmployeeRawPunchGeoLocation_Accuracy']+'</td>';
-                    echo '</tr>';
+                    echo "<tr>";
+                    echo "<td>".$row['Employee_XRefCode']."</td>";
+                    echo "<td>".$row['Employee_FirstName']."</td>";
+                    echo "<td>".$row['Employee_LastName']."</td>";
+                    echo "<td>".$row['PunchType_ShortName']."</td>";
+                    echo "<td>".$row['EmployeeRawPunch_RawPunchTime'].'</td>';
+                    echo "<td>".$row['EmployeeRawPunchGeoLocation_Longitude']."</td>";
+                    echo "<td>".$row['EmployeeRawPunchGeoLocation_Latitude']."</td>";
+                    echo "<td>".$row['EmployeeRawPunchGeoLocation_Accuracy']."</td>";
+                    echo "</tr>";
                 }
                 ?>
           </tbody>

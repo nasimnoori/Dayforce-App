@@ -12,7 +12,11 @@
   </head>
   <body>
       
-      <a href="insert.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="false">Insert punch</a>
+      <div class="container">
+          <a href="insert.php" class="btn btn-primary btn-lg" role="button">Insert punch</a>
+      </div>
+      
+      
 
 
       <!-- Optional JavaScript -->

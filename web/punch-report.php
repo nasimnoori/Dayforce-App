@@ -40,7 +40,7 @@ $result = connect($url, $query = '', $headers);
 //var_dump($result['body']);
 $res = json_decode($result, true);
 //$XRefCode = $res['body']['Data']['XRefCode'];
-$rows = $res['body']['Data']['Rows'];
+
 ?>
 
     <h1><?php //echo $XRefCode ?></h1>
@@ -60,6 +60,7 @@ $rows = $res['body']['Data']['Rows'];
           </thead>
           <tbody>
               <?php
+              $rows = $res['body']['Data']['Rows'];
                 foreach ($rows as $row) {
                     echo '<tr>';
                     echo '<td scope="row">'+$row['Employee_XRefCode']+'</td>';

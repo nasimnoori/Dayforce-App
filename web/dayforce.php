@@ -67,7 +67,8 @@ function connect($url, $query, $header) {
 }
 $headers = array('Accept' => 'application/json');
 $query = array('IS_VALIDATE_ONLY' => true, 'EmploymentStatus' => "ACTIVE", 'IncludeSubordinateObjects' => true);
-$url = 'https://www.dayforcehcm.com/api/sdi/v1/EmployeesPunchesEmployeesPunches?filtertransactionTimeEndUtc=2019-04-05&filtertransactionTimeStartUtc=2019-04-01&EmployeeXRefCode=000227';
+$url = 'https://test.dayforcehcm.com/api/sdi/v1/Reports/EMPRAWPUNCHNEW';
+//$url = 'https://www.dayforcehcm.com/api/sdi/v1/EmployeesPunchesEmployeesPunches?filtertransactionTimeEndUtc=2019-04-05&filtertransactionTimeStartUtc=2019-04-01&EmployeeXRefCode=000227';
 //$query = array(EmploymentStatus = "ACTIVE", IncludeSubordinateObjects = false);
 // $result = connect('https://www.dayforcehcm.com/api/sdi/v1/Employees/991465', ['IS_VALIDATE_ONLY' => true, 'EmployeeXRefCode' => 991465]);
 $result = connect($url, $query, $headers);

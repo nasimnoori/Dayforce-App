@@ -24,11 +24,10 @@ $result = connect($url, $query = '', $headers);
 //To Print raw json object
 //var_dump($result['body']);
 $res = json_decode($result, true);
+$XRefCode = $res['body']['Data']['XRefCode'];
 $rows = $res['body']['Data']['Rows'];
 
-foreach ($rows as $row) {
-    echo $row['Employee_XRefCode'];
-}
+
 
 ?>
 
@@ -43,10 +42,43 @@ foreach ($rows as $row) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Employee Punch Report!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1><?php echo $XRefCode ?></h1>
+      
+      
+      
+      <table class="table table-sm">
+          <thead>
+            <tr>
+                <th scope="col">XRefCode</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Punch Type</th>
+                <th scope="col">Date Time</th>
+                <th scope="col">Location Logitude</th>
+                <th scope="col">Location Latitude</th>
+                <th scope="col">Location Accuracy</th>
+            </tr>
+          </thead>
+          <tbody>
+              <?php
+                foreach ($rows as $row) {
+                    echo '<tr>';
+                    echo '<td scope="row">'+$row['Employee_XRefCode']+'</td>';
+                    echo '<td>'+$row['Employee_FirstName']+'</td>';
+                    echo '<td>'+$row['Employee_LastName']+'</td>';
+                    echo '<td>'+$row['PunchType_ShortName']+'</td>';
+                    echo '<td>'+$row['EmployeeRawPunch_RawPunchTime']+'</td>';
+                    echo '<td>'+$row['EmployeeRawPunchGeoLocation_Longitude']+'</td>';
+                    echo '<td>'+$row['EmployeeRawPunchGeoLocation_Latitude']+'</td>';
+                    echo '<td>'+$row['EmployeeRawPunchGeoLocation_Accuracy']+'</td>';
+                    echo '</tr>';
+                }
+                ?>
+          </tbody>
+      </table>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

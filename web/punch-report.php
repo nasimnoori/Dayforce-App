@@ -39,11 +39,11 @@ $result = connect($url, $query = '', $headers);
 //To Print raw json object
 //var_dump($result['body']);
 $res = json_decode($result, true);
-$XRefCode = $res['body']['Data']['XRefCode'];
+//$XRefCode = $res['body']['Data']['XRefCode'];
 $rows = $res['body']['Data']['Rows'];
 ?>
 
-    <h1><?php echo $XRefCode ?></h1>
+    <h1><?php //echo $XRefCode ?></h1>
         
       <table class="table table-sm">
           <thead>

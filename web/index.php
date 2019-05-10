@@ -1,6 +1,8 @@
 <?php
 require_once '../vendor/autoload.php';
+$conn = pg_connect(getenv("DATABASE_URL"));
 require '/functions.php';
+
 
 try {
     $rawData = getData();
